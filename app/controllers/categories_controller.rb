@@ -14,6 +14,5 @@ class CategoriesController < ApplicationController
 
 	def show
 		@category = Category.find(params[:id])
-		@posts = @category.posts.where(:order => 'rank DESC')
 	end
 end
