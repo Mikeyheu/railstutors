@@ -52,11 +52,9 @@ class PostsController < ApplicationController
     else
      @post.votes.create(value:1, post_id:@post.id, user_id:current_user.id)
     end
-
-    
     @post.rank = total_votes(@post)
     @post.save
-    redirect_to posts_path
+    redirect_to :back
   end
 
   def downvote
@@ -66,11 +64,10 @@ class PostsController < ApplicationController
       @post.votes.find_by_user_id(current_user.id).update_attributes(value:-1)
     else
      @post.votes.create(value:-1, post_id:@post.id, user_id:current_user.id)
-    end
-    
+    end 
     @post.rank = total_votes(@post)
     @post.save
-    redirect_to posts_path
+    redirect_to :back
   end
 
 end

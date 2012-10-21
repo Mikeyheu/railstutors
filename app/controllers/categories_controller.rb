@@ -5,14 +5,11 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.new(params[:category])
-		if @category.save
-
-    else
-
-    end
+		@category.save
 	end
 
 	def show
 		@category = Category.find(params[:id])
+		@posts = @category.posts.sort_by { |p| -p.rank }
 	end
 end
