@@ -19,8 +19,15 @@ class ApplicationController < ActionController::Base
     end
 	end
 
+  def total_votes(post)
+    positive = post.votes.where(value:1).size
+    negative = post.votes.where(value:-1).size
+    positive - negative
+  end
+
   helper_method :current_user
   helper_method :require_login
+  helper_method :total_votes
 end
 
 

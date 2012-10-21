@@ -1,14 +1,15 @@
 CourseProject::Application.routes.draw do
 
-root to: "main#index"
+root to: "posts#index"
 	resources :users, only: [:new, :create, :show]
 	resources :sessions, only: [:new, :create, :destroy]
-	resources :categories, only: [:new, :create, :show]
+	resources :categories, only: [:show]
 	resources :posts do
 		member do
 			get 'upvote'
 			get 'downvote'
 		end
-		resources :comments	
+		resources :comments, only: [:create]
+		resources :votes, only: [:create, :update]
 	end
 end

@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
 
-  before_filter :require_login, only: [:new, :create]
+  before_filter :require_login, only: [:new, :create, :upvote, :downvote]
 
   def index
-    @posts = Post.all(:order => 'votes DESC')
+    @posts = Post.all(:order => 'rank DESC')
   end
 
   def show
@@ -46,18 +46,31 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.votes += 1
+    # if @post has a vote that matches the current user then 
+    if @post.votes.find_by_user_id(current_user.id)
+      @post.votes.find_by_user_id(current_user.id).update_attributes(value:1)
+    else
+     @post.votes.create(value:1, post_id:@post.id, user_id:current_user.id)
+    end
+
+    
+    @post.rank = total_votes(@post)
     @post.save
     redirect_to posts_path
   end
 
   def downvote
     @post = Post.find(params[:id])
-    @post.votes -= 1
+    # if @post has a vote that matches the current user then 
+    if @post.votes.find_by_user_id(current_user.id)
+      @post.votes.find_by_user_id(current_user.id).update_attributes(value:-1)
+    else
+     @post.votes.create(value:-1, post_id:@post.id, user_id:current_user.id)
+    end
+    
+    @post.rank = total_votes(@post)
     @post.save
     redirect_to posts_path
   end
-
-
 
 end

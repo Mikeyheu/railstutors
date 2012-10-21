@@ -3,7 +3,9 @@
 	<%= f.text_field :title %>
 	<%= f.label :url %>
 	<%= f.text_field :url %>
-	</br>
+	<%= f.label :category %>
+	<%= f.select(:category_id,{'Comics'=> 1, 'Games' => 2, 'Code'=>3, 'Movies'=>4, 'Cosplay'=>5, 'Random'=>6}) %>
+</br>
 	<%= f.check_box :link %> Is this a link? </br></br>
 	<%= f.submit "Submit" %>
 <% end %>
