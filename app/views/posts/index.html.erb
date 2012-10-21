@@ -1,0 +1,24 @@
+<h1>What's Hot</h1>
+
+<%= link_to "Create a new post", new_post_path %><hr>
+<ul>
+	<% @posts.each do |post| %>
+		<li>
+			<div class="post_container">
+				<div class="post_left">
+					<div class="arrow_up"><%= link_to '<i class="icon-sort-up"></i>'.html_safe, upvote_post_path(post) %></div>
+					<div class="votes"><%= post.votes %></div>
+					<div class="arrow_down"><%= link_to '<i class="icon-sort-down"></i>'.html_safe, downvote_post_path(post) %></div>
+				</div>
+				<div class ="post_right">
+					<div class="post_title"><%= link_to post.title, post_path(post) %></div>
+					<div class='post_comments'><i class="icon-comment"></i> <%= post.comments.size %> | Posted by <%= link_to post.user.username, post.user %></div>
+				</div>
+			</div>
+		</li>
+		<hr>
+	<% end %>
+</ul>
+
+
+

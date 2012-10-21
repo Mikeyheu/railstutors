@@ -1,0 +1,17 @@
+<h1><%= @user.username %></h1>
+
+<%= "Joined #{time_ago_in_words(@user.created_at)} ago" %>
+
+<h3>Latest Posts </h3>
+<ul>
+	<% @user.posts.each do |post| %>
+		<li><%= link_to post.title, post  %></li>
+	<% end %>
+</ul>
+
+<h3>Latest Comments </h3>
+<ul>
+	<% @user.comments.each do |comment| %>
+		<li><%= link_to comment.post.title, comment.post  %></li>
+	<% end %>
+</ul>

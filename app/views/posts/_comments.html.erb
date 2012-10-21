@@ -1,0 +1,8 @@
+<h4>Comments(<%= @post.comments.size %>)</h4>
+<hr>
+<ul>
+		<% @post.comments.each do |comment| %>
+			<li><div class="comment"><%= comment.content %></div>
+			</br>Submitted by: <%= link_to comment.user.username, comment.user %></li><hr>
+		<% end %>
+</ul>

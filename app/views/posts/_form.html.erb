@@ -1,0 +1,9 @@
+<%= form_for(@post) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+	<%= f.label :url %>
+	<%= f.text_field :url %>
+	</br>
+	<%= f.check_box :link %> Is this a link? </br></br>
+	<%= f.submit "Submit" %>
+<% end %>
