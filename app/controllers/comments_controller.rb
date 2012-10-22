@@ -5,15 +5,15 @@ class CommentsController < ApplicationController
  def create
     # This works too (with nested routes)
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new(params[:comment])
-    @comment.user_id = User.find(current_user)
-    @comment.save
- 
+    @comment = @post.comments.new(content: params[:comment][:content], user_id: current_user.id)
+    # @comment.user_id = User.find(current_user)
+
     if @comment.save
       respond_to { |format| format.js }
-    else
+    else 
       render json: params
     end
+
 
 
     
