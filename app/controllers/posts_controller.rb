@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-
+  
   before_filter :require_login, only: [:new, :create, :upvote, :downvote]
 
   def index

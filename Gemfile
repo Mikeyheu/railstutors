@@ -27,6 +27,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'twitter'
 gem 'font-awesome-rails'
+gem 'friendly_id'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
