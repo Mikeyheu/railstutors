@@ -15,3 +15,12 @@
 		<li><%= link_to comment.post.title, comment.post  %></li>
 	<% end %>
 </ul>
+
+<% if @user.twitter_handle %>
+<h3>Latest Tweets </h3>
+	<ul>
+		<% @client.user_timeline(@user.twitter_handle, count: "10").each do |tweet| %>
+	     <li><%= tweet.text %></li>
+		<% end %>
+	</ul>
+<% end %>
