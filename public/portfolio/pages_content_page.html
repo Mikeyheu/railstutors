@@ -1,0 +1,285 @@
+<!doctype html>  
+<html lang="en">  
+<head>  
+  <meta charset="utf-8">  
+  <title>Portfolio App</title>  
+  <meta name="description" content="Portfolio App">  
+  <meta name="author" content="Michael Heu"> 
+  <!--   <link rel="stylesheet" href="css/font-awesome.css"> -->
+  
+  <link rel="stylesheet" href="css/jquery-ui-1.9.1.custom.css">
+  <link rel="stylesheet" href="css/layout-default-latest.css">
+  <link rel="stylesheet" href="css/bootstrap-dropdown.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/jquery-1.8.2.js"></script>  
+  <script src="js/jquery-ui-1.9.1.custom.js"></script>  
+  <script src="js/jquery.mjs.nestedSortable.js"></script>
+  <script src="js/bootstrap-dropdown.js"></script> 
+  <script src="js/jquery.layout-latest.js"></script> 
+  <!-- Bootstrap and other plugins
+
+   
+   
+-->
+
+  <!--[if lt IE 9]>  
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>  
+  <![endif]-->  
+</head>  
+<body>  
+  <div class="header">
+    <div id="primary-navbar" class="navbar primary-navbar">
+      <a class="logo" href="#">Portfolio App</a>
+      <ul class="nav primary-nav">
+        <li class="active"><a href="#">Design</a></li>
+        <li><a href="#about">Pages</a></li>
+        <li><a href="#contact"> Settings</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li class="nav-header">User</li>
+            <li><a href="#">Account Settings</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li class="divider"></li>
+            <li class="nav-header">Support</li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">User Guide</a></li>
+          </ul>
+        </li>         
+      </ul>
+    </div>
+
+    <div class="content">
+
+      <div class="left-panel">
+        <div id="secondary-navbar" class="navbar secondary-navbar">
+          <ul class="nav">
+          <!-- <li>
+            <a href="#">
+              <div class="nav-button-text">
+                <div class="icon add left"></div> 
+                <div class="icon-text left"> Create</div>
+              </div>
+            </a>
+          </li> -->
+
+
+          <li class="dropdown nav-button-text">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon add left"></i><div class="icon-text left"> Create <b class="caret"></b></div> </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Content Page</a></li>
+              <li><a href="#">Gallery</a></li>
+              <li><a href="#">Folder(Group)</a></li>
+              <li><a href="#">Link</a></li>
+
+            </ul>
+          </li>   
+
+
+
+          <li class="divider-vertical"></li>     
+        </ul>   
+        <ul class="nav">
+
+          <li>
+            <a href="#">
+              <div class="nav-button-text">
+                <div class="icon upload left"></div>
+                <div class="icon-text left"> Upload</div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical"></li>        
+        </ul>
+      </div>
+
+
+
+
+      <div id="panes">
+        <div id="page-menu" class="west-center">
+          <ol class="sortable">
+            <li><div><i class="icon-nav content-page"></i><a href="#">Home</a></div></li>
+            <li class="folder">
+              <div><i class="icon-nav folder"></i><a href="#">Portfolios 1</a></div>
+              <ol>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i><a href="#">Fashion</a></div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Models</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Portrait</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Advertising</div></li>
+              </ol>
+            </li>
+            <li class="folder">
+              <div><i class="icon-nav folder"></i><a href="#">Portfolios 2</a></div>
+              <ol>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i><a href="#">Weddings</a></div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Kids</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Nude</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Other</div></li>
+              </ol>
+            </li>
+            <li class="folder">
+              <div><i class="icon-nav folder"></i>About</div>
+              <ol>
+                <li><div><i class="icon-nav content-page"></i>Biography</div></li>
+                <li><div><i class="icon-nav content-page"></i>Seminars</div></li>
+              </ol>
+            </li>
+            <li><div><i class="icon-nav link"></i>Blog</div></li>
+            <li><div><i class="icon-nav content-page"></i>Contact</div></li>
+          </ol>
+        </div>
+
+        <div id="archive-menu" class="west-south">
+          <ol class="sortable">
+            <li class="folder">
+              <div><i class="icon-nav folder"></i><a href="#">Recent Uploads</a></div>
+              <ol>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i><a href="#">10-26-2012</a></div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>10-24-2012</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>10-20-2012</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Gap Model Shoot</div></li>
+              </ol>
+            </li>
+            <li class="folder">
+              <div><i class="icon-nav folder"></i><a href="#">My Shots</a></div>
+              <ol>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i><a href="#">Fashion Random</a></div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Random</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Portraits</div></li>
+                <li><div class="dropzone"><i class="icon-nav gallery"></i>Advertising Shots</div></li>
+              </ol>
+            </li>
+
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+
+      <div class="navbar secondary-navbar">
+        <ul class="nav">
+          <li>
+            <a href="#">
+              <div id="caret" class="nav-button">
+                <div class="icon caret-left"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical"></li>
+        </ul>
+        <ul class="nav nav-right">
+          <li class="divider-vertical"></li>
+          <li class="dropdown nav-button">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div class="icon add"></div> </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Text Element</a></li>
+              <li><a href="#">Image Element</a></li>
+            </ul>
+          </li>   
+          <li class="divider-vertical"></li>
+          <li>
+            <a href="#">
+              <div id="settings" class="nav-button">
+                <div class="icon settings"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical"></li>
+          <li>
+            <a href="#">
+              <div id="view" class="nav-button">
+                <div class="icon view"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical"></li>
+          <li>
+            <a href="#">
+              <div id="save" class="nav-button">
+                <div class="icon save"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical"></li>
+          <li>
+            <a href="#">
+              <div id="trash" class="nav-button">
+                <div class="icon trash"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="tertiary-navbar" class="navbar tertiary-navbar hide">
+        <div class="nav nav-text">
+          <form id="object_form" name="object_form">
+            X: <input type="text" value ="" id="x" name="x" maxlength="5" size="4">
+            Y: <input type="text" value ="" id="y" name="y" maxlength="5" size="4">
+            W: <input type="text" value ="" id="width" name="width" maxlength="5" size="4">
+            H: <input type="text" value ="" id="height" name="height" maxlength="5" size="4">
+            <button id="update" type="button">Update</button>
+          </form>
+
+        </div>
+        <ul class="nav">
+          <li class="divider-vertical divider-gray"></li>
+          <li>
+            <a href="#">
+              <div id="object-settings" class="nav-button">
+                <div class="icon settings"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical divider-gray"></li>
+          <li class="dropdown nav-button">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><div class="icon stack"></div> </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Move to top</a></li>
+              <li><a href="#">Move to bottom</a></li>
+            </ul>
+          </li>   
+          <li class="divider-vertical divider-gray"></li>
+          <li>
+            <a href="#">
+              <div id="object-trash" class="nav-button">
+                <div class="icon trash"></div>
+              </div>
+            </a>
+          </li>
+          <li class="divider-vertical divider-gray"></li>
+        </ul>
+      </div>
+
+      <div class="right-inner">
+
+
+       <!--  <div id="draggable" class="drop_allowed">
+          <p>Drag me to my target</p>
+        </div> -->
+
+        <div id="bounding-box-border">
+          
+        </div>
+
+
+
+<div class="element">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+       </div>
+
+       <div class="element">
+        <img src="img/ichc.jpeg">
+       </div>
+       
+
+     </div>
+   </div>
+
+ </div>
+
+ <script src="js/scripts.js"></script>  
+</body>  
+</html>
